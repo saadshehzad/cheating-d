@@ -1,9 +1,9 @@
 import math
 import numpy as np
-import random
 import copy
 import pandas as pd
 import cv2
+import secrets
 
 # THIS FUNCTION CONVERTS THE INPUTTED POSE COLLECTION INTO A DISTRIBUTION [0,1] FOR EVERY KEYPOINT.
 # IT ADDITIONALLY FLIPS THE Y DIMENSION TO REFLECT A CARTESIAN COORDINATE SYSTEM
@@ -125,9 +125,9 @@ def RandomizePose(pose, range=0.05):
     for keyPoint in newPose:
         if keyPoint[2] == 0:
             continue
-        keyPoint[0] *= 1 + random.uniform(-range, range)
-        keyPoint[1] *= 1 + random.uniform(-range, range)
-        keyPoint[2] *= 1 + random.uniform(-range, range)
+        keyPoint[0] *= 1 + secrets.SystemRandom().uniform(-range, range)
+        keyPoint[1] *= 1 + secrets.SystemRandom().uniform(-range, range)
+        keyPoint[2] *= 1 + secrets.SystemRandom().uniform(-range, range)
     return newPose
 
 
