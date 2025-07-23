@@ -127,3 +127,4 @@ STATIC_URL = '/static/'
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 MEDIA_URL = '/media/'
+SESSION_COOKIE_SECURE = True
